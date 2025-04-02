@@ -47,6 +47,9 @@ class Motion:
         return (displacement[0]**2 + displacement[1]**2 + displacement[2]**2)**0.5
         
     def getTimeToReachPosition(self, finalPosition: tuple):
+        if finalPosition == self.initialPosition:  # Verifica se as posições são iguais
+            return 0
+
         dx = finalPosition[0] - self.initialPosition[0]
         dy = finalPosition[1] - self.initialPosition[1]
         dz = finalPosition[2] - self.initialPosition[2]
@@ -67,7 +70,8 @@ class Motion:
         if len(times) > 0 and all(t == times[0] for t in times) and times[0] >= 0:
             return times[0]
         else:
-            return math.inf 
+            return math.inf
+
     
     def getTimeToReachDistance(self, targetDistance: float):
         x0, y0, z0 = self.initialPosition

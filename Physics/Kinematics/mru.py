@@ -17,7 +17,7 @@ class Velocity:
         return (self.vx, self.vy, self.vz)
     
     def getVx(self):
-        return self.vx
+        return self.vx  
     
     def getVy(self):
         return self.vy
@@ -47,7 +47,7 @@ class Motion:
         return (displacement[0]**2 + displacement[1]**2 + displacement[2]**2)**0.5
         
     def getTimeToReachPosition(self, finalPosition: tuple):
-        if finalPosition == self.initialPosition:  # Verifica se as posições são iguais
+        if finalPosition == self.initialPosition:
             return 0
 
         dx = finalPosition[0] - self.initialPosition[0]

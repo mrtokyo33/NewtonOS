@@ -1,5 +1,7 @@
 from .mru import *
 
-v = Velocity(10, 45, 45)
-m = Motion(v, (1, 0, -1))
-print(m.getPositionAfterXSeconds(3))
+v = Velocity(3)
+m = Motion(v, (1, 0, 0))
+
+print(m.getTimeToReachPosition((0, 0, 0)))
+print(m.getTimeToReachPosition((1, 0, 1)))

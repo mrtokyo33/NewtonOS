@@ -31,7 +31,7 @@ class Velocity:
 #R(t) = R0 + V*t
 #V(t) = V 
 
-class Motion:
+class MRU:
     def __init__(self, velocity: Velocity, initialPosition: tuple = (0, 0, 0)):
         self.velocity = velocity
         self.initialPosition = initialPosition
@@ -132,3 +132,14 @@ class Motion:
     def getVelocityMagnitude(self):
         return self.velocity.getMagnitude()
 
+    def getVelocityFunction(self):
+        # Returns the velocity function as v(t) = v 
+        velocityValue = self.velocity.getMagnitude()
+        return f"v(t) = {velocityValue}"
+    
+    def getPositionFunction(self):
+        # Retyrns the position function as R(t) = R0 + V*t
+        x0, y0, z0 = self.initialPosition
+        vx, vy, vz = self.velocity.getComponents()
+
+        return f"R(t) = ({x0} + {vx}*t, {y0} + {vy}*t, {z0} + {vz}*t)"

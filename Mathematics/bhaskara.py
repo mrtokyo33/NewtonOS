@@ -30,3 +30,5 @@ class Bhaskara:
     
     def getDiscriminant(self):
         return self.discriminant
+    
+    
